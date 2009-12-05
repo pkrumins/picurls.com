@@ -1,0 +1,52 @@
+<div id="content">
+ <div id="login">
+  <h2>Login into picurls</h2>
+  <div id="loginform">
+   {if $login_error}
+   <div id="error">
+    <p>{$login_error|escape:'html'|commentize}</p>
+   </div>
+   {/if}
+   <form action="/login.html" method="post" name="login">
+    <input type="hidden" name="action" value="login">
+    <label for="username" class="username">username:</label>
+    <input type="text" name="username" id="username" value="{if $login_username}{$login_username|escape:'html'}{/if}">
+    <br>
+    <label for="password" class="password">password:</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <input type="submit" value="Login!" name="login">
+   </form>
+  </div>
+ </div>
+
+ <div id="register">
+  <h2>Register at picurls</h2>
+  <div id="registerform">
+   {if $registration_error}
+   <div id="error">
+    <p>{$registration_error|escape:'html'|commentize}</p>
+   </div>
+   {/if}
+   <form action="/register.html" method="post" name="register">
+    <input type="hidden" name="action" value="register">
+    <label for="username" class="username">username:</label>
+    <input type="text" name="username" id="username" value="{if $register_username}{$register_username|escape:'html'}{/if}">
+    <br>
+    <label for="password" class="password">password:</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="password2" class="password">password again:</label>
+    <input type="password" name="password2" id="password2">
+    <br>
+    <label for="botspam" class="botspam">to prevent spam, what is "1 + 1" (answer is 2):</label>
+    <input type="text" name="botspam" id="botspam">
+    <br>
+    <input type="submit" value="Register!" name="register">
+   </form>
+  </div>
+
+ </div>
+
+ <div class="clear-both"></div>
+</div>

@@ -1,0 +1,202 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+body {
+	font: 62.5%/1.5  arial,helvetica,sans-serif;
+	background-color: white;
+}
+
+
+a {
+	color: #105CB6;
+}
+
+a:hover {
+	color: #114179;	
+}
+
+
+a img {
+	border: none;
+}
+
+#outside {
+	margin: 10px;
+}
+
+#header {
+	background-color: #c4d5c1;
+	background-position: 30px 0px;
+	height: 80px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+#header #logo {
+	float: left;
+	width: 200px;	
+}
+
+#header #menu {
+	margin-left: 215px;
+}
+
+#header #menu #up {
+	border-bottom: 2px solid White;
+	height: 39px;
+	overflow: hidden;
+	line-height: 39px;
+}
+
+#header #menu #down {
+	height: 39px;
+	overflow: hidden;
+	line-height: 39px;	
+}
+
+#header #menu #down #social {
+	float: right;
+	font-size: 1.2em;
+}
+
+#header #menu #down #social ul {
+	list-style-type: none;
+	vertical-align: middle;
+}
+
+#header #menu #down #social ul li {
+	display: inline;
+}
+
+#header #menu #down #social ul li.delicious,
+#header #menu #down #social ul li.forums {
+	margin-right: 10px;
+}
+
+#header #menu #down #social ul li.delicious a {
+	background-image: url(/img/delicious-small.gif);
+	background-repeat: no-repeat;
+	padding-left: 18px
+}
+
+#header #menu #down #social ul li.forums a {
+	background-image: url(/img/vbulletin.gif);
+	background-repeat: no-repeat;
+	padding-left: 18px
+}
+
+
+#header #menu #down #social ul li.delicious img {
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+#header #userinfo {
+	float: right;
+	height: 80px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+#header #menu #up p {
+	font-size: 1.2em;
+	color: #3E3E3E;
+}
+
+#header #menu #up p.logout {
+	font-size: 1.1em;
+}
+
+#header #menu span.username {
+	color: #606060;
+	font-weight: bold;	
+}
+
+#header #login {
+	float: right;
+	height: 80px;
+	margin-right: 20px;
+	position: relative;
+	top: -3px;
+	width: 180px;
+}
+
+#header #login form label {
+	font-size: 1.2em;
+	color: #3E3E3E;
+	font-weight: bold;
+}
+
+#header #login #loginform {
+	margin-top: 6px;
+}
+
+#header #login form input.submit {
+	width: 100%
+}
+
+#header #login form input.register {
+	width: 100%
+}
+
+#header #login a.register {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #8B4513;
+	text-decoration: none;
+}
+
+#header #login a.register:hover {
+	text-decoration: underline;
+}
+
+#body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+#body #terror {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#body #terror img {
+	margin-bottom: 10px;
+}
+
+#body #terror p {
+	font-size: 1.2em;
+	font-weight: bold;
+	border: 1px dotted #661818;
+	padding: 10px;
+	background-color: #F8E2E2;
+}
+
+.clear-both {
+	clear: both;
+}
+
+.clear-left {
+	clear: left;
+}
+
+.clear-right {
+	clear: right;
+}
+
+#footer {
+	background-color: #D7E5D5;
+	height: 7.3em;
+	font-size: 1.2em;
+	padding-top: 1em;
+}
+
+#footer p{
+	text-align: center;
+}

@@ -1,0 +1,88 @@
+#
+# Copyright (C) 2007 Peteris Krumins (peter@catonmat.net)
+# http://www.catonmat.net  -  good coders code, great reuse
+# 
+# picurls.com website database structure for SQLite database
+#
+# Read how picurls.com was designed at:
+# http://www.catonmat.net/blog/making-of-picurls-popurls-for-pictures-part-one/
+#
+
+# AUTOINCREMENT removed because SQLite2 does not support it!
+
+BEGIN TRANSACTION;
+
+CREATE TABLE items (
+  id         INTEGER PRIMARY KEY,  -- AUTOINCREMENT
+  title      STRING  NOT NULL,
+  sane_title STRING  NOT NULL,
+  url        STRING  NOT NULL,
+  thumb      STRING  NOT NULL,
+  site_id    INTEGER NOT NULL,
+  date_added DATE    NOT NULL,
+  visible    BOOL    NOT NULL DEFAULT 1
+);
+
+CREATE TABLE tmp_items (
+  id         INTEGER PRIMARY KEY,  -- AUTOINCREMENT,
+  title      STRING  NOT NULL,
+  url        STRING  NOT NULL,
+  date_added DATE    NOT NULL,
+  site_id    INTEGER NOT NULL,
+  tries      INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE comments (
+  id             INTEGER PRIMARY KEY,  -- AUTOINCREMENT,
+  comment        STRING  NOT NULL,
+  item_id        INTEGER NOT NULL,
+  user_id        STRING  NOT NULL,
+  anonymous_name STRING,
+  ip_address     STRING  NOT NULL,
+  date_added     DATE    NOT NULL
+);
+
+CREATE TABLE sites (
+  id        INTEGER PRIMARY KEY,
+  name      STRING  NOT NULL UNIQUE,
+  sane_name STRING  NOT NULL UNIQUE,
+  url       STRING  NOT NULL UNIQUE,
+  visible   BOOL    NOT NULL DEFAULT 1,
+  priority  INTEGER NOT NULL
+);
+
+CREATE TABLE users (
+  id          INTEGER PRIMARY KEY, -- AUTOINCREMENT,
+  username    STRING NOT NULL UNIQUE,
+  password    STRING NOT NULL,
+  data        STRING,
+  ip_address  STRING NOT NULL,
+  date_regged DATE   NOT NULL,
+  date_access DATE   NOT NULL,
+  can_login   BOOL   NOT NULL DEFAULT 1
+);
+
+CREATE INDEX IDX_sites_sane_name       on sites(sane_name);
+CREATE INDEX IDX_sites_priority        on sites(priority);
+CREATE INDEX IDX_items_site_id         on items(site_id);
+CREATE INDEX IDX_items_date_added      on items(date_added);
+CREATE INDEX IDX_items_sane_title      on items(sane_title);
+CREATE INDEX IDX_comments_item_id      on comments(item_id);
+CREATE INDEX IDX_comments_user_id      on comments(user_id);
+CREATE INDEX IDX_comments_date_added   on comments(date_added);
+CREATE INDEX IDX_comments_item_user_ip on comments(item_id, user_id, ip_address);
+CREATE INDEX IDX_users_username        on users(username);
+
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Digg',        'digg',        'http://www.digg.com',        1);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Reddit',      'reddit',      'http://reddit.com',          2);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('del.icio.us', 'delicious',   'http://del.icio.us',         3);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('StumbleUpon', 'stumbleupon', 'http://www.stumbleupon.com', 4);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Flickr',      'flickr',      'http://www.flickr.com',      5);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Simpy',       'simpy',       'http://www.simpy.com',       6);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Furl',        'furl',        'http://www.furl.net',        7);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Boing Boing', 'boingboing',  'http://www.boingboing.net',  8);
+INSERT INTO sites (name, sane_name, url, priority) VALUES('Wired',       'wired',       'http://www.wired.com',       9);
+
+INSERT INTO users (id, username, password, ip_address, date_regged, date_access, can_login) VALUES (0, 'anonymous', 'x', '0.0.0.0', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0);
+
+COMMIT;

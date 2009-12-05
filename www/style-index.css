@@ -1,0 +1,141 @@
+#body div.site {
+	float: left;
+	width: 300px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+}
+
+#body div#welcome{
+	border-bottom: 2px solid #C4D5C1;
+	padding: 5px;
+	margin-bottom: 30px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #64815C;
+}
+
+#body div.site h2 {
+	width: 300px;
+	background: transparent url(/img/dotter.gif) repeat-x scroll 1px 100%;
+	font-size: 2em;
+	overflow: hidden;
+	height: 1.5em;
+	margin-bottom: 10px;
+}
+
+#body div.site h2 a.title {
+	font-weight: bold;
+	color: #667663;
+	text-decoration: none;
+	float: left;
+}
+
+#body div.site h2 a.siteurl {
+	float: right;
+	margin-right: 5px;
+}
+
+#body div.site h2 a.siteurl img {
+	position: relative;
+	top: 3px;
+}
+
+#body div.site div.entry {
+	padding-top: 5px;
+	width: 300px;
+	margin-bottom:7px;
+}
+
+#body div.site div.entry div.thumbnail {
+	float: left;
+}
+
+#body div.site div.entry img.thumbnail {
+	border: 1px solid #EEE8AA;
+	padding: 2px;
+}
+
+#body div.site div.entry div.body {
+	float: left;
+	margin-left: 8px;
+	width: 226px; /* 300 - (60 + 2*(2+1) + 8) = 226 */
+}
+
+#body div.site div.entry div.body div.heading {
+	height: 47px;
+	overflow: hidden;
+	padding-left: 1px;
+}
+
+#body div.site div.entry div.body div.heading a {
+	color: #105CB6;
+	font-size: 1.1em;
+}
+
+#body div.site div.entry div.body div.heading a:hover,
+#body div.site div.entry div.body div.heading a:visited {
+	color: #114179;
+}
+
+#body div.site div.entry div.body div.details {
+	height: 20px;
+	overflow: hidden;
+}
+
+/* i dunno how i got to this complicated selectors, but they work,
+** i'll leave them this infinitely lengthy
+*/
+#body div.site div.entry div.body div.details a {
+	text-decoration: none;
+}
+
+#body div.site div.entry div.body div.details span.comments {
+	margin-right: 6px;
+}
+
+#body div.site div.entry div.body div.details span.local a,
+#body div.site div.entry div.body div.details span.comments a {
+	color: #105CB6;
+}
+
+#body div.site div.entry div.body div.details span.comments a:hover,
+#body div.site div.entry div.body div.details span.comments a:visited,
+#body div.site div.entry div.body div.details span.local a:hover,
+#body div.site div.entry div.body div.details span.local a:visited {
+	color: #123967;
+}
+
+#body div.site div.entry div.body div.details span.comments img {
+	margin-right: 3px;
+}
+
+#body div.site div.entry div.body div.details span.date {
+	margin-right: 6px;
+	color: #A7A7A7;
+}
+
+#body div.site div.entry div.body div.details span.date img {
+	margin-right: 6px;
+}
+
+#body div.site div.entry div.body div.details span.local img {
+	margin-right: 5px;
+}
+
+#body div.site div.entry div.body div.details img {
+	position:relative;
+	top: 3px;
+}
+
+#body div.site div.more {
+	border-top: 1px solid #DDEBF9;
+	text-align: right;
+	padding-top: 3px;
+	padding-right: 5px;
+}
+
+#body div.site div.more a {
+	text-decoration: none;
+	text-align: right;
+	color: #105CB6;
+}

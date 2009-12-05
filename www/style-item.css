@@ -1,0 +1,183 @@
+#body div.site {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#body div.site h1 span.title {
+	color: #5A6857;
+}
+
+#body div.site div.entry {
+	padding-top: 5px;
+	width: 100%;
+	margin-bottom:3px;
+}
+
+#body div.site div.entry div.thumbnail {
+	float: left;
+}
+
+#body div.site div.entry img.thumbnail {
+	border: 1px solid #EEE8AA;
+	padding: 2px;
+}
+
+#body div.site div.entry div.body {
+	margin-left: 96px;
+	padding-right: 15px;
+}
+
+#body div.site div.entry div.body div.heading {
+	padding-top: 7px;
+	height: 50px;
+	overflow: hidden;
+}
+
+#body div.site div.entry div.body div.heading a {
+	color: #105CB6;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+#body div.site div.entry div.body div.heading a:hover,
+#body div.site div.entry div.body div.heading a:visited {
+	color: #114179;
+}
+
+#body div.site div.entry div.body div.details {
+	height: 20px;
+	overflow: hidden;
+	font-size: 1.1em;
+}
+
+/* i dunno how i got to this complicated selectors, but they work,
+** i'll leave them this infinitely lengthy
+*/
+#body div.site div.entry div.body div.details a {
+	text-decoration: none;
+}
+
+#body div.site div.entry div.body div.details span.comments {
+	margin-right: 8px;
+}
+
+#body div.site div.entry div.body div.details span.date {
+	margin-right: 8px;
+	color: #909090;
+}
+
+#body div.site div.entry div.body div.details span.local {
+	margin-right: 8px;
+}
+
+#body div.site div.entry div.body div.details span.local a,
+#body div.site div.entry div.body div.details span.comments a,
+#body div.site div.entry div.body div.details span.pics a {
+	color: #105CB6;
+}
+
+#body div.site div.entry div.body div.details span.comments a:hover,
+#body div.site div.entry div.body div.details span.comments a:visited,
+#body div.site div.entry div.body div.details span.local a:hover,
+#body div.site div.entry div.body div.details span.local a:visited,
+#body div.site div.entry div.body div.details span.pics a:hover,
+#body div.site div.entry div.body div.details span.pics a:visited {
+	color: #123967;
+}
+
+#body div.site div.entry div.body div.details span.comments img {
+	margin-right: 3px;
+}
+
+#body div.site div.entry div.body div.details span.date-added {
+	color: #909090;
+	color: #A7A7A7;	
+}
+
+#body div.site div.entry div.body div.details span.date img,
+#body div.site div.entry div.body div.details span.local img,
+#body div.site div.entry div.body div.details span.pics img {
+	margin-right: 5px;
+}
+
+#body div.site div.entry div.body div.details img {
+	position:relative;
+	top: 3px;
+}
+
+#body div.site div#comments,
+#body div.site div#addcomment {
+	margin-top: 30px;
+}
+
+#body div.site div#comments h2,
+#body div.site div#addcomment h2 {
+	background: transparent url(/img/dotter.gif) repeat-x scroll 1px 100%;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #798B76;	
+}
+
+#body div.site div#comments div.comment,
+#body div.site div#comments div.nocomment {
+	padding-top: 15px;
+}
+
+#body div.site div#comments div.nocomment p {
+	font-size: 1.3em;
+}
+
+#body div.site div#comments div.comment div.info {
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+#body div.site div#comments div.comment div.content {
+	font-size: 1.3em;
+}
+
+#body div.site div#comments div.comment div.info span.user {
+	 font-weight: bold;
+	 color: #687865;
+}
+
+#body div.site div#comments div.comment div.info span.time {
+	 color: #88978D;
+}
+
+#body div.site div#comments div.comment div.info span.user img {
+	 margin-right: 3px;
+}
+
+#body div.site div#comments div.comment div.info img {
+	position:relative;
+	top: 2px;
+}
+
+#body div.site div#addcomment form {
+	margin-top: 15px;
+	font-size: 1.1em;
+}
+
+#body div.site div#addcomment form label {
+	font-size: 1.2em;
+	display: block;
+	font-weight: bold;
+	color: #4D5A4A;
+}
+
+#body div.site div#addcomment form textarea,
+#body div.site div#addcomment form input {
+	border: 1px solid #687865;
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+#body div.site div#addcomment div#error {
+	margin-top: 15px;
+	font-size: 1.3em;
+	color: #921D1D;
+	padding: 5px;
+	border: 1px dotted #921D1D;
+	font-weight: bold;
+}

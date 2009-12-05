@@ -1,0 +1,43 @@
+ <div id="comments">
+  <h2>Your Comments</h2>
+  {foreach from=$comments key=id item=comment name=comments}
+   <div class="comment">
+    <div class="info">
+     <span class="user"><img src="/img/user.gif">{$comment.username}{if $comment.anonymous_name} ({$comment.anonymous_name}){/if}</span>,
+     <span class="time">{$comment.human_time_diff} ago ({$comment.date_added|date_format:'%A, %B %d, %Y @ %H:%M:%S'})</span>
+    </div>
+    <div class="item">commented on: <a href="/item/{$comment.item_sane_title}.html" title="View '{$comment.item_title|escape:'html'}">{$comment.item_title|escape:'html'}</a></div>
+    <div class="content">
+     {$comment.comment|escape:'html'|commentize}
+    </div>
+   </div>
+  {foreachelse}
+   <div class="nocomment">
+    <p>You have not written any comments so far!</p>
+   </div>
+  {/foreach}
+ </div>
+
+  <div id="navigation">
+  {if $current_page == 1}
+   <span class="previous"><img src="/img/previous.gif"> Previous</span>
+  {else}
+   <span><a href="/my-comments-{$current_page-1}.html" class="previous"><img src="/img/previous.gif"> Previous</a></span>
+  {/if}
+ 
+  {section name=page start=0 loop=$total_pages}
+   {assign var='real_page' value=`$smarty.section.page.index+1`}
+ 
+   {if $current_page == $real_page}
+    <span class="current">{$real_page}</span>
+   {else}
+    <span><a href="/my-comments-{$real_page}.html">{$real_page}</a></span>
+   {/if}
+  {/section}
+ 
+  {if $current_page == $total_pages}
+   <span>Next <img src="/img/next.gif"></span>
+  {else}
+   <span><a href="/my-comments-{$current_page+1}.html">Next <img src="/img/next.gif"></a></span>
+  {/if}
+ </div>

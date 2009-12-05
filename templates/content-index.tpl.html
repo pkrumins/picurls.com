@@ -1,0 +1,46 @@
+{dynamic}
+{if $smarty.session.welcome}
+ <div id="welcome">
+  <p>Welcome {$smarty.session.username}! You have successfuly registered at picurls! :)<br>
+     You can now comment on pics! (More features for regged users coming soon!)<br><br>
+     <a href="/my-profile.html">Click here</a> to set some profile information such as email and your website address.
+  </p>
+ </div>
+{/if}
+{/dynamic}
+{foreach from=$sites key=id item=site name=sites}
+ <div class="site">
+  <h2>
+   <a href="/site/{$site.sane_name}.html" class="title" title="Buzziest pics from {$site.name}!">{$site.name}</a>
+   <a href="{$site.url}" target="_blank" class="siteurl" title="Visit {$site.name} ({$site.url})"><img src="/img/link.gif" width="12" height="12"/></a>
+  </h2>
+  <div class="clear-both"></div>
+
+  {foreach from=$site.items key=id item=item name=items}
+  <div class="entry">
+   <div class="thumbnail">
+    <a href="{$item.url}" title="View '{$item.title|escape:'html'}'"><img src='{$item.thumb}' width="60" height="60" class="thumbnail" alt="Picture '{$item.title|escape:'html'}'"/></a>
+   </div>
+   <div class="body">
+    <div class="heading">
+    <a href="{$item.url}" title="View '{$item.title|escape:'html'}'">{$item.title}</a>
+    </div>
+    <div class="details">
+     <span class="comments"><a href="/item/{$item.sane_title}.html" title="Comment on '{$item.title|escape:'html'}'"><img src="/img/comments.gif">({$item.comments.count})</a></span>
+     <span class="date"><img src="/img/date.gif">{$item.date_added|date_format:'%Y-%m-%d %H:%M:%S'}</span>
+     <span class="local"><a href="/item/{$item.sane_title}.html"><img src="/img/local.gif">link</a></span>
+    </div>
+   </div>
+   <div class="clear-both"></div>
+  </div>
+  {/foreach}
+  <div class="more">
+   <a href="/site/{$site.sane_name}.html" title="View more pics from {$site.name}!">more pics&nbsp;&nbsp;<img src="/img/more.gif"></a>
+  </div>
+ </div>
+ {if $smarty.foreach.sites.iteration % 3 == 0}
+ <div class="clear-left"></div>
+ {/if}
+{/foreach}
+
+<div class="clear-left"></div>

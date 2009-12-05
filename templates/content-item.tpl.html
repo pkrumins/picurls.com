@@ -1,0 +1,63 @@
+<div class="site">
+ <div class="entry">
+  <div class="thumbnail">
+   <a href="{$item.url}" title="View '{$item.title|escape:'html'}'"><img src='{$item.thumb}' width="80" height="80" class="thumbnail" alt="Picture '{$item.title|escape:'html'}'"/></a>
+  </div>
+  <div class="body">
+   <div class="heading">
+    <h1><a href="{$item.url}" title="View '{$item.title|escape:'html'}'">{$item.title}</a></h1>
+   </div>
+   <div class="details">
+    <span class="comments"><a href="/item/{$item.sane_title}.html" title="Comment on '{$item.title|escape:'html'}'"><img src="/img/comments.gif">{$item.comments.count} comment{if $item.comments.count > 1 || $item.comments.count == 0}s{/if}</a></span>
+    <span class="date"><img src="/img/date.gif"><span class="date-added">Added on </span>{$item.date_added|date_format:'%Y-%m-%d %H:%M:%S'}</span>
+    <span class="local"><a href="/item/{$item.sane_title}.html"><img src="/img/local.gif">permalink</a></span>
+    <span class="pics"><a href="/site/{$site.sane_name}.html" title="More pics from {$site.name}!"><img src="/img/pics.gif">More pics from {$site.name}</a></span>
+   </div>
+  </div>
+  <div class="clear-both"></div>
+ </div>
+
+ <div id="comments">
+  <h2>Comments</h2>
+  {foreach from=$item.comments.items key=id item=comment name=comments}
+   <div class="comment">
+    <div class="info">
+     <span class="user"><img src="/img/user.gif">{$comment.username}{if $comment.anonymous_name} ({$comment.anonymous_name}){/if}</span>,
+     <span class="time">{$comment.human_time_diff} ago ({$comment.date_added|date_format:'%A, %B %d, %Y @ %H:%M:%S'})</span>
+    </div>
+    <div class="content">
+     {$comment.comment|escape:'html'|commentize}
+    </div>
+   </div>
+  {foreachelse}
+   <div class="nocomment">
+    <p>No comments! Be <strong>the first</strong> to comment!</p>
+   </div>
+  {/foreach}
+ </div>
+
+ <div id="addcomment">
+  <h2>Add a Comment</h2>
+  {if $comment_error}
+  <div id="error">
+   <p>{$comment_error|escape:'html'|commentize}</p>
+  </div>
+  {/if}
+  <form name="comment" method="post">
+   <input type="hidden" name="sane_title" value="{$item.sane_title}">
+   {dynamic}
+   {if !$smarty.session.user_id}
+   <label for="name">name:</label><input name="name" id="name" type="text" tabindex="1">
+   <br />
+   {/if}
+   {/dynamic}
+   <label for="comment">comment:</label><textarea name="comment" id="comment" cols="60" rows="10" tabindex="2">{if $existing_comment}{$existing_comment|escape:'html'}{/if}</textarea>
+   <br />
+   <label for="botspam">To prevent comment spam, what is "1 + 1" (answer is 2):</label><input name="botspam" id="botspam" type="text" tabindex="3">
+   <br />
+   <input type="submit" value="Submit!">
+  </form>
+ </div>
+
+</div>
+

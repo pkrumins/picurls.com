@@ -1,0 +1,68 @@
+#comments {
+	padding-bottom: 30px;
+}
+
+#comments h2 {
+	background: transparent url(/img/dotter.gif) repeat-x scroll 1px 100%;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #798B76;	
+}
+
+#comments div.comment,
+#comments div.nocomment {
+	padding-top: 15px;
+}
+
+#comments div.nocomment p {
+	font-size: 1.3em;
+}
+
+#comments div.comment div.info {
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+#comments div.comment div.content {
+	font-size: 1.3em;
+}
+
+#comments div.comment div.info span.user {
+	 font-weight: bold;
+	 color: #687865;
+}
+
+#comments div.comment div.info span.time {
+	 color: #88978D;
+}
+
+#comments div.comment div.info span.user img {
+	 margin-right: 3px;
+}
+
+#comments div.comment div.info img {
+	position:relative;
+	top: 2px;
+}
+
+#comments div.comment div.item {
+	margin-bottom: 5px;
+	font-size: 1.1em;
+}
+
+#navigation {
+	background-color: #F0F8FF;
+	padding: 5px;
+	font-size: 1.1em;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-bottom: 30px;
+}
+
+#navigation img {
+	position:relative;
+	top: 4px;
+}
+
+#navigation a {
+	text-decoration: none;
+}

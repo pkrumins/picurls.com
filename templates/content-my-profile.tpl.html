@@ -1,0 +1,54 @@
+<div id="content">
+ <div id="profile">
+  <h2>Your Profile</h2>
+  <div id="profileform">
+   {if $error_profile}
+   <div id="error">
+    <p>{$error_profile|escape:'html'|commentize}</p>
+   </div>
+   {/if}
+   <form action="/my-profile.html" method="post" name="profile">
+    <input type="hidden" name="action" value="profile">
+    <label for="email" class="email">email:</label>
+    <input type="text" name="email" id="email" value="{if $email}{$email|escape:'html'}{/if}">
+    <br>
+    <label for="website" class="website">website:</label>
+    <input type="website" name="website" id="website" value="{if $website}{$website|escape:'html'}{/if}">
+    <br>
+    <input type="submit" value="Change information!" name="submit">
+   </form>
+  </div>
+ </div>
+
+ <div id="password">
+  <h2>Your Password</h2>
+  <div id="passwordform">
+   {if $error_password}
+   <div id="error">
+    <p>{$error_password|escape:'html'|commentize}</p>
+   </div>
+   {/if}
+   {if $info_password}
+   <div id="info">
+    <p>{$info_password|escape:'html'|commentize}</p>
+   </div>
+   {/if}
+   <form action="/my-profile.html" method="post" name="profile">
+    <input type="hidden" name="action" value="password">
+    <label for="current_password" class="current_password">current password:</label>
+    <input type="password" name="current_password" id="current_password">
+    <br>
+    <label for="new_password" class="new_password">new password:</label>
+    <input type="password" name="new_password" id="new_password">
+    <br>
+    <label for="new_password2" class="new_password2">new password again:</label>
+    <input type="password" name="new_password2" id="new_password2">
+    <br>
+    <input type="submit" value="Change password!" name="submit">
+   </form>
+  </div>
+ </div>
+
+ <div class="clear-both"></div>
+
+</div>

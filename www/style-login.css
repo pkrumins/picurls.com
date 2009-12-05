@@ -1,0 +1,58 @@
+#body div#content {
+	margin-bottom: 30px;
+}
+
+#body div#content div#login {
+	float: left;
+	width: 450px;
+	margin-right: 30px;
+}
+
+#body div#content div#register {
+	float: left;
+	width: 450px;
+	margin-right: 30px;	
+}
+
+#body div#content div#login h2,
+#body div#content div#register h2 {
+	background: transparent url(/img/dotter.gif) repeat-x scroll 1px 100%;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #798B76;
+}
+
+#body div#content div#login form,
+#body div#content div#register form {
+	margin-top: 15px;
+	font-size: 1.1em;
+}
+
+#body div#content div#login form label,
+#body div#content div#register form label
+{
+	font-size: 1.2em;
+	display: block;
+	font-weight: bold;
+	color: #4D5A4A;
+}
+
+#body div#content div#login form textarea,
+#body div#content div#register form textarea,
+#body div#content div#login form input,
+#body div#content div#register form input
+{
+	border: 1px solid #687865;
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+#body div#content div#login div#error,
+#body div#content div#register div#error {
+	margin-top: 15px;
+	font-size: 1.3em;
+	color: #921D1D;
+	padding: 5px;
+	border: 1px dotted #921D1D;
+	font-weight: bold;
+}

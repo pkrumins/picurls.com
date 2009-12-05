@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+{if $page_title}
+<title>picurls: {$page_title|escape:'html'}</title>
+{else}
+<title>picurls: picture buzz! buzziest pictures on the net!</title>
+{/if}
+
+<link rel="stylesheet" href="/style.css" type="text/css" />
+{if $page_style}
+<link rel="stylesheet" href="/{$page_style}" type="text/css" />
+{/if}
+
+<link rel="shortcut icon" href="/favicon.ico" />
+
+{if $page_description}
+<meta name="description" content="{$page_description|escape:'html'}" />
+{else}
+<meta name="description" content="picurls: picture buzz! buzziest pictures from the most popular sites on the internet!" />
+{/if}
+
+<meta name="keywords" content="picurls, picture urls, picture buzz, digg, reddit, flickr, multimedia, picture, pictures, photos, drawings, charts, graphs" />
+
+<meta name="verify-v1" content="S4T+V4HBKaRXWnsiNsLkguyrVRxAz0Owc+pUWC/3M2Q=" />
+
+<!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="ie-hacks-hello-world.css" />
+<![endif]-->
+
+</head>
+
+<body>
+ <div id="outside">
+  {dynamic}
+  <div id="header">
+   <div id="logo">
+    <a href="http://picurls.com" title="picurls: buzziest pics!"><img src="/picurls.gif" alt="picurls: buzziest pics!" /></a>
+   </div>
+   {if !$smarty.session.user_id}
+    <div id="login">
+    <div id="loginform">
+     <form action="/login.html" method="post" name="login">
+      <table border="0">
+       <tr>
+        <td align="center"><label for="username" class="username">username:</label></td>
+        <td align="center"><label for="password" class="password">pass:</label></td>
+       </tr>
+       <tr>
+        <td><input type="text" name="username" id="username" size="12"></td>
+        <td><input type="password" name="password" id="password" size="12"></td>
+       </tr>
+       <tr><td colspan="2" height="3"></td></tr>
+       <tr>
+        <td>
+         <input type="submit" name="submit" value="Login!" class="submit">
+        </td>
+        <td align="center">
+         <div style="padding-top: 3px"></div>
+         <!--<a href="/register.html" title="Register at picurls!" class="register">register!</a>-->
+         <a href="/register.html" title="Register at picurls!" class="register"><img src="/img/register.gif" alt="register"></a>
+        </td>
+       </tr>
+      </table>
+      <div class="clear-left"></div>
+     </form>
+    </div>
+    </div>
+   {/if}
+   <div id="menu" {if !$smarty.session.user_id}style="margin-right: 230px"{/if}>
+    <div id="up">
+    {if $smarty.session.user_id}
+    <p>logged in as <span class="username">{$smarty.session.username}</span>! [<a href="/my-profile.html">my profile</a> | <a href="/my-comments.html">my comments</a> | <a href="/logout.html" title="Logout of picurls">logout</a>]</p>
+    {/if}
+    </div>
+    <div id="down">
+     <div id="social">
+      <ul>
+       <li class="delicious"><a href="http://del.icio.us/post?url=http%3A%2F%2Fpicurls.com&title=picurls%3A+picture+buzz%21+buzziest+pictures+on+the+net%21" title="Bookmark picurls at del.icio.us!">bookmark</a></li>
+       <li class="forums"><a href="http://picurls.zigzap.com" title="Discuss picurls.com on forums!">picurls discussion forums</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  {/dynamic}
+  <div class="clear-both"></div>
+  <div id="body">
+   {include file=$tpl_content}
+  </div>
+  <div id="footer">
+      <p>This website was made by Peteris Krumins (<a href="http://www.catonmat.net/about/" title="About Peteris Krumins">about him</a>) (c) 2007. His blog is at <a href="http://www.catonmat.net" title="good programmers program, great reuse">good coders code, great reuse</a>.</p>
+      <p>Read how this website was designed - <a href="http://www.catonmat.net/blog/making-of-picurls-popurls-for-pictures-part-one/">part one: the data scraper</a> and <a href="http://www.catonmat.net/blog/making-of-picurls-popurls-for-pictures-part-two/">part two: full source code</a>!</p>
+      <p>The content of this website was entirely auto-generated from social media websites.</p>
+      <p>The excellent server hosting sponsored by <a href="http://www.zigzap.com" title="ZigZap: We are tech...">ZigZap Technologies</a>!</p>
+  </div>
+ </div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=3017357; 
+var sc_invisible=0; 
+var sc_partition=32; 
+var sc_security="ed912b69"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
+class="statcounter"><a class="statcounter"
+href="http://www.statcounter.com/"><img class="statcounter"
+src="http://c33.statcounter.com/3017357/0/ed912b69/0/" alt="invisible hit
+counter" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-273333-14";
+urchinTracker();
+</script>
+
+</body>
+
+</html>
+

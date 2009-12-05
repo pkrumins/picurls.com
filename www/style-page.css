@@ -1,0 +1,132 @@
+#body div.site {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#body div.site h1 {
+	background: transparent url(/img/dotter.gif) repeat-x scroll 1px 100%;
+	font-size: 2em;
+	overflow: hidden;
+	height: 1.5em;
+	margin-bottom: 10px;
+}
+
+#body div.site h1 a.title {
+	font-weight: bold;
+	color: #7A8C77;
+	text-decoration: none;
+}
+
+#body div.site h1 span.title {
+	color: #5A6857;
+}
+
+#body div.site div.entry {
+	padding-top: 5px;
+	width: 100%;
+	margin-bottom:3px;
+}
+
+#body div.site div.entry div.thumbnail {
+	float: left;
+}
+
+#body div.site div.entry img.thumbnail {
+	border: 1px solid #EEE8AA;
+	padding: 2px;
+}
+
+#body div.site div.entry div.body {
+	margin-left: 96px;
+	padding-right: 15px;
+}
+
+#body div.site div.entry div.body div.heading {
+	padding-top: 7px;
+	height: 50px;
+	overflow: hidden;
+}
+
+#body div.site div.entry div.body div.heading a {
+	color: #105CB6;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+#body div.site div.entry div.body div.heading a:hover,
+#body div.site div.entry div.body div.heading a:visited {
+	color: #114179;
+}
+
+#body div.site div.entry div.body div.details {
+	height: 20px;
+	overflow: hidden;
+	font-size: 1.1em;
+}
+
+/* i dunno how i got to this complicated selectors, but they work,
+** i'll leave them this infinitely lengthy
+*/
+#body div.site div.entry div.body div.details a {
+	text-decoration: none;
+}
+
+#body div.site div.entry div.body div.details span.comments {
+	margin-right: 8px;
+}
+
+#body div.site div.entry div.body div.details span.local a,
+#body div.site div.entry div.body div.details span.comments a {
+	color: #105CB6;
+}
+
+#body div.site div.entry div.body div.details span.comments a:hover,
+#body div.site div.entry div.body div.details span.comments a:visited,
+#body div.site div.entry div.body div.details span.local a:hover,
+#body div.site div.entry div.body div.details span.local a:visited {
+	color: #123967;
+}
+
+#body div.site div.entry div.body div.details span.comments img {
+	margin-right: 3px;
+}
+
+#body div.site div.entry div.body div.details span.date {
+	margin-right: 8px;
+	color: #909090;
+}
+
+#body div.site div.entry div.body div.details span.date-added {
+	color: #909090;
+	color: #A7A7A7;	
+}
+
+#body div.site div.entry div.body div.details span.date img {
+	margin-right: 5px;
+}
+
+#body div.site div.entry div.body div.details span.local img {
+	margin-right: 5px;
+}
+
+#body div.site div.entry div.body div.details img {
+	position:relative;
+	top: 3px;
+}
+
+#body div.site div#navigation {
+	background-color: #F0F8FF;
+	padding: 5px;
+	font-size: 1.1em;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-top: 30px;
+}
+
+#body div.site div#navigation img {
+	position:relative;
+	top: 4px;
+}
+
+#body div.site div#navigation a {
+	text-decoration: none;
+}

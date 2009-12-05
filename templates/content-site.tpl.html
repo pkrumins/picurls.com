@@ -1,0 +1,49 @@
+<div class="site">
+ <h1>
+  <a href="/site/{$site.sane_name}.html" class="title" title="Buzziest pics from {$site.name}!">Buzziest Pics from <span class="title">{$site.name}</span></a>
+ </h1>
+
+ {foreach from=$site.items key=id item=item name=items}
+ <div class="entry">
+  <div class="thumbnail">
+   <a href="{$item.url}" title="View '{$item.title|escape:'html'}'"><img src='{$item.thumb}' width="80" height="80" class="thumbnail" alt="Picture '{$item.title|escape:'html'}'"/></a>
+  </div>
+  <div class="body">
+   <div class="heading">
+    <a href="{$item.url}" title="View '{$item.title|escape:'html'}'">{$item.title}</a>
+   </div>
+   <div class="details">
+    <span class="comments"><a href="/item/{$item.sane_title}.html" title="Comment on '{$item.title|escape:'html'}'"><img src="/img/comments.gif">{$item.comments.count} comment{if $item.comments.count > 1 || $item.comments.count == 0}s{/if}</a></span>
+    <span class="date"><img src="/img/date.gif"><span class="date-added">Added on </span>{$item.date_added|date_format:'%Y-%m-%d %H:%M:%S'}</span>
+    <span class="local"><a href="/item/{$item.sane_title}.html"><img src="/img/local.gif">permalink</a></span>
+   </div>
+  </div>
+  <div class="clear-both"></div>
+ </div>
+ {/foreach}
+
+ <div id="navigation">
+  {if $current_page == 1}
+   <span class="previous"><img src="/img/previous.gif"> Previous</span>
+  {else}
+   <span><a href="/site/{$site.sane_name}-{$current_page-1}.html" class="previous"><img src="/img/previous.gif"> Previous</a></span>
+  {/if}
+ 
+  {section name=page start=0 loop=$total_pages}
+   {assign var='real_page' value=`$smarty.section.page.index+1`}
+ 
+   {if $current_page == $real_page}
+    <span class="current">{$real_page}</span>
+   {else}
+    <span><a href="/site/{$site.sane_name}-{$real_page}.html">{$real_page}</a></span>
+   {/if}
+  {/section}
+ 
+  {if $current_page == $total_pages}
+   <span>Next <img src="/img/next.gif"></span>
+  {else}
+   <span><a href="/site/{$site.sane_name}-{$current_page+1}.html">Next <img src="/img/next.gif"></a></span>
+  {/if}
+ </div>
+
+</div>

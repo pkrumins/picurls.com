@@ -1,0 +1,7 @@
+#body div.site h2 a.siteurl {
+	float: right;
+	vertical-align: bottom;
+    position: relative;
+    top: 3px;
+	margin-right: 5px;
+}
